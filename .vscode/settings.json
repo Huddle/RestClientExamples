@@ -1,0 +1,10 @@
+{
+    "rest-client.environmentVariables": {
+        "$shared": {
+            "authToken": "<replace_with_your_auth_token>"
+        },
+        "dev0-staging": {
+            "authToken": "<replace_with_your_staging_auth_token>"
+        }
+    }
+}
