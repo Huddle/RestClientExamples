@@ -4,7 +4,9 @@
             "authToken": "<replace_with_your_auth_token>"
         },
         "dev0-staging": {
-            "authToken": "<replace_with_your_staging_auth_token>"
+            "authToken": "<replace_with_your_staging_auth_token>",
+            "tld": "test",
+            "userId": "921114"
         }
     }
 }
