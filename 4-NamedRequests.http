@@ -1,0 +1,26 @@
+###
+# @name Entry
+GET https://api.huddle.{{tld}}/membership/entry HTTP/1.1 
+Accept: application/vnd.huddle.data+json
+Authorization: Bearer {{authToken}}
+
+### 
+@userLink = {{Entry.response.body.$.links[?(@.rel=='user')].href}}
+@workspacesLink = {{Entry.response.body.$.links[?(@.rel=='workspaces')].href}}
+@companies = {{Entry.response.body.$.links[?(@.rel=='companies')].href}}
+
+###
+# @name Workspaces
+GET {{workspacesLink}}
+Accept: application/vnd.huddle.data+json
+Authorization: Bearer {{authToken}}
+
+###
+@teamsLink = {{Workspaces.response.body.$.workspaces.[0].links[?(@.rel=='teams')].href}}
+
+###
+# @name Teams
+
+GET {{teamsLink}}
+Accept: application/vnd.huddle.data+json
+Authorization: Bearer {{authToken}}
